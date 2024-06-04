@@ -10,7 +10,7 @@ body {
   width: 200px;
 }
 .contenedorNav {
-  background-color: rgb(224, 224, 224);
+  background-color: rgb(246, 246, 246);
 }
 #carrito {
   border: 1px solid #ccc;
@@ -56,6 +56,7 @@ img {
 .bottonAgregarCarrito {
   margin-top: 5px;
   font-size: 12px;
+  border-radius: 6px;
   background-color: rgb(224, 224, 224);
   color: rgb(10, 10, 10);
   padding: 4px;
@@ -63,7 +64,8 @@ img {
   width: 100%;
 }
 .bottonAgregarCarrito:hover {
-  background-color: rgb(3, 3, 3);
+  background-color: rgba(207, 108, 54, 0.69);
+  color: white;
 }
 .botonVerProducto {
   font-size: 12px;
@@ -78,6 +80,21 @@ img {
     background-color: #9e9e9e;
     color: rgb(10, 10, 10);
     font-weight: 500;
+}
+.botonPagarProducto{
+    font-size: 12px;
+  background-color: rgb(47, 47, 47);
+  color: rgb(192, 188, 188);
+  padding: 4px;
+  border-radius: 6px;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+}
+.botonPagarProducto:hover{
+  background-color: #9e9e9e;
+  color: rgb(10, 10, 10);
+  font-weight: 500;
 }
 .botonEliminar{
   font-size: 12px;
@@ -116,6 +133,78 @@ img {
 }
 
 .containerModal {
-  color: rgb(237, 237, 237);
+  color: rgb(14, 14, 14);
   border: none;
+  background-color: #ffffff;
+}
+
+.divCarrito{
+  background-color: #c9c9c996;
+  padding: 20px;
+}
+.pagos{
+  font-size: 16px;
+  color: rgb(14, 14, 14);
+  font-weight: 400;
+  cursor: pointer;
+
+}
+
+.ico{
+  width: 40px;
+  cursor: pointer;
+}
+.icoCarrito{
+  width: 35px;
+  cursor: pointer;
+  
+}
+
+/* Loader */
+
+.virtual-card,
+.physical-card,
+.tokenized-card {
+  margin: 0 50px;
+}
+
+.plus {
+  animation: plus 2s cubic-bezier(0.34, 1.56, 0.64, 1) infinite;
+}
+
+.plus-one {
+  animation: plus 2.5s cubic-bezier(0.34, 1.56, 0.64, 1) infinite;
+}
+
+.plus-two {
+  animation: plus 3s cubic-bezier(0.34, 1.56, 0.64, 1) infinite;
+}
+
+.plus-three {
+  animation: plus 3.5s cubic-bezier(0.34, 1.56, 0.64, 1) infinite;
+}
+
+.plus-four {
+  animation: plus 4s cubic-bezier(0.34, 1.56, 0.64, 1) infinite;
+}
+
+.plus-five {
+  animation: plus 4.5s cubic-bezier(0.34, 1.56, 0.64, 1) infinite;
+}
+
+@keyframes plus {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+.contenedorVolver{
+  width: 200px;
 }

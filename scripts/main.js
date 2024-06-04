@@ -106,20 +106,37 @@ document.addEventListener("DOMContentLoaded", () => {
       const divProducto = document.createElement("div");
       divProducto.className = "col-6 col-sm-3 productoCard";
       divProducto.innerHTML = `
-                <img src="${producto.imagen}" alt="${producto.nombre}">
-                <h3 class="nombreProducto">${producto.nombre}</h3>
-                <p class="parrafoSize"> Size: ${producto.size}</p>
-                <p class="precioProducto">Precio: $${producto.precio.toFixed(
-                  2
-                )}</p>
-                <button data-id="${
-                  producto.id
-                }" class="botonVerProducto btn btn-info">Ver Producto</button>
-                <button data-id="${
-                  producto.id
-                }" class="bottonAgregarCarrito btn btn-primary">Agregar al Carrito</button>
-            `;
+        <img src="${producto.imagen}" alt="${producto.nombre}">
+        <h3 class="nombreProducto">${producto.nombre}</h3>
+        <p class="parrafoSize"> Size: ${producto.size}</p>
+        <p class="precioProducto">Precio: $${producto.precio.toFixed(2)}</p>
+        <button data-id="${producto.id}" class="botonVerProducto">Ver Producto</button>
+        <button data-id="${producto.id}" class="bottonAgregarCarrito" id="bottonAgregar">Agregar al Carrito</button>
+      `;
       productosDiv.appendChild(divProducto);
+    });
+  
+    // Agregar eventos a los botones "Agregar al Carrito"
+    let botonesAgregar = document.querySelectorAll(".bottonAgregarCarrito");
+    botonesAgregar.forEach((boton) => {
+      boton.addEventListener("click", () => {
+        const Toast = Swal.mixin({
+          toast: true,
+          position: "top-end",
+          showConfirmButton: false,
+          timer: 3000,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.onmouseenter = Swal.stopTimer;
+            toast.onmouseleave = Swal.resumeTimer;
+          }
+        });
+        Toast.fire({
+          icon: "success",
+          title: "Agregando al Carrito",
+          className: "swal2-icon swal2-success swal2-animate-success-icon"
+        });
+      });
     });
   };
 
@@ -139,6 +156,39 @@ document.addEventListener("DOMContentLoaded", () => {
       total += item.precio;
     });
     totalCarrito.textContent = `Total: $${total.toFixed(2)}`;
+    let pagarProducto = document.getElementById("pagarProducto");
+    pagarProducto.textContent = `Pagar $${total}`;
+    if (total === 0) {
+      pagarProducto.textContent = "Pagar"; 
+      pagarProducto.addEventListener("click", () => {
+        Swal.fire({
+          icon: "error",
+          title: "No Tienes Productos en el Carrito",
+          text: "Debes Agregar Almenos Un Producto a tu Carrito de Compras! ",
+          confirmButtonColor: "#2A3439",
+          confirmButtonBorderColor: "#E5E4E2",
+          confirmButtonText: " Ver Productos",
+        });
+      })
+    }else {
+        pagarProducto.textContent = `Pagar $${total}`;
+      
+      pagarProducto.addEventListener("click", () => {
+        Swal.fire({
+          title: "Pagar Productos",
+          text: `El total a pagar es de $${total} ¿Desea realizar el pago?`,
+          imageUrl: "https://incredibletravelperu.com/wp-content/uploads/2020/04/Metodos-de-pago-incredible-peru-travel.png",
+          imageWidth: 300,
+          imageHeight: 100,
+          imageAlt: "Custom image",
+          showCancelButton: true,
+          confirmButtonColor: "#2A3439",
+          confirmButtonBorderColor: "#E5E4E2",
+          confirmButtonColorText: "#2A3439",
+          confirmButtonText: `<a href="../pages/pagos.html">Ir a Pagar</a>`,
+        });
+      })
+    }
   };
 
   // Función para guardar carrito en localStorage

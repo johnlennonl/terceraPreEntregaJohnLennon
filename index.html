@@ -13,32 +13,30 @@
 <body>
     <!--NavBar-->
     <nav class="navbar contenedorNav">
-        <div class="container-fluid d-flex justify-content-center">
-            <a class="navbar-brand" href="#">
-                <img src="https://cdn.freelogovectors.net/wp-content/uploads/2020/10/nike-just-do-it-logo.png"
-                    alt="Logo" class="d-inline-block align-text-top logo">
-            </a>
+        <div class="container flex justify-content-between">
+            <div>
+                <a class="navbar-brand" href="#">
+                    <img src="https://cdn.freelogovectors.net/wp-content/uploads/2020/10/nike-just-do-it-logo.png"
+                        alt="Logo" class="d-inline-block align-text-top logo">
+                </a>
+            </div>
+            <div class="">
+                <a href="#sessionCarrito"><img class="icoCarrito " src="https://img.icons8.com/?size=100&id=v2xcJsdCOidU&format=png&color=000000" alt="Carrito"></a>
+                <img class="icoCarrito " src="https://img.icons8.com/?size=100&id=2800&format=png&color=000000" alt="Carrito">
+            </div>
         </div>
+        
     </nav>
     <!--Banner-->
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="https://www.premieroutlet.hu/fileadmin/user_upload/nike111.jpg" class="d-block w-100"
-                    alt="...">
+                <img src="https://img2.storyblok.com/1440x580/filters:format(jpeg):quality(100)/f/68177/1440x580/47981e88e7/banner-web-nike-1440x580.jpg" class="d-block w-100"
+                    alt="banner">
             </div>
         </div>
     </div>
-    <div class="container-fluid mt-4">
-        <h1 class="text-center mb-4 titulo">Carrito de Compras - Nike</h1>
-        <!-- Carrito de compras -->
-        <div class="container d-flex justify-content-center">
-            <div id="carrito" class="contenedorCarrito">
-                <h2 class="tuCarrito">Tu Carrito</h2>
-                <ul id="listaCarrito" class="list-group mb-3 "></ul>
-                <p id="totalCarrito" class="fw-bold">Total: $0.00</p>
-            </div>
-        </div>
+    <h1 class="text-center mt-3">Zapatos y zapatillas Nike</h1>
 
         <!-- Productos -->
         <div class="container">
@@ -51,7 +49,7 @@
     <!-- Modal para ver detalles del producto -->
     <div class="modal fade" id="productoModal" tabindex="-1" aria-labelledby="productoModalLabel" aria-hidden="true">
         <div class="modal-dialog">
-            <div class="modal-content bg-dark containerModal">
+            <div class="modal-content  containerModal ">
                 <div class="modal-header">
                     <h5 class="modal-title" id="modalNombre"></h5>
                 </div>
@@ -66,6 +64,41 @@
             </div>
         </div>
     </div>
+    <!--Carrito de Compras -->
+    <div id="sessionCarrito" class="container-fluid mt-5 divCarrito">
+        <h2 class="text-center mb-4 titulo">Carrito de Compras - Nike</h2>
+        <!-- Carrito de compras -->
+        <div class="container d-flex justify-content-center">
+            <div id="carrito" class="contenedorCarrito">
+                <h2 class="tuCarrito">Tu Carrito</h2>
+                <ul id="listaCarrito" class="list-group mb-3 "></ul>
+                <p id="totalCarrito" class="fw-bold">Total: $0.00</p>
+                <button id="pagarProducto" class="botonPagarProducto">.</button>
+            </div>
+        </div>
+       <div class="text-center mt-3">
+        <p class="pagos">CUÁLES SON LAS OPCIONES DE PAGO?
+            <br>
+             Tarjeta de Credito
+            <br>
+             Tarjeta de Debito
+            <br>
+             BinancePay
+            <br>
+             PayPal
+            <br>
+             Zelle Transferencia USA
+        </p>
+        <div>
+            <img class="ico" src="https://img.icons8.com/?size=100&id=11079&format=png&color=000000" alt="Visa">
+            <img class="ico" src="https://img.icons8.com/?size=100&id=11080&format=png&color=000000" alt="Master">
+            <img class="ico" src="https://img.icons8.com/?size=100&id=74XminJ8M1Qo&format=png&color=000000" alt="Binance">
+            <img class="ico" src="https://img.icons8.com/?size=100&id=34525&format=png&color=000000" alt="Paypal">
+        </div>
+       </div>
+    </div>
+
+
 
     <!--Banner-->
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
@@ -83,6 +116,7 @@
         <p class="mb-1">&copy; 2017–2024 Company Nike</p>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
