@@ -185,7 +185,7 @@ document.addEventListener("DOMContentLoaded", () => {
           confirmButtonColor: "#2A3439",
           confirmButtonBorderColor: "#E5E4E2",
           confirmButtonColorText: "#2A3439",
-          confirmButtonText: `<a href="../pages/pagos.html">Ir a Pagar</a>`,
+          confirmButtonText: `<a href="./pages/pagos.html">Ir a Pagar</a>`,
         });
       })
     }
